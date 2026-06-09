@@ -3,6 +3,7 @@ import { DotField } from "@/components/ui";
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { Favourites } from "@/components/Favourites";
+import { Groups } from "@/components/Groups";
 
 export default function Home() {
   const data = loadData();
@@ -18,6 +19,7 @@ export default function Home() {
         <main>
           <Hero meta={data.meta} top={favourite} />
           <Favourites teams={data.simulation.teams} />
+          <Groups groups={data.groups} />
         </main>
       </div>
     </>
