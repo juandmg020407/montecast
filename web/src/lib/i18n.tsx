@@ -19,6 +19,7 @@ export const dict = {
     "nav.method": "Method",
 
     "hero.eyebrow": "Monte Carlo Forecast",
+    "hero.title": "Who lifts the trophy in 2026?",
     "hero.lead":
       "We simulate the entire 48-team tournament tens of thousands of times with a model trained on 150 years of international football — then read off who is most likely to lift the trophy.",
     "hero.toWin": "to win it all",
@@ -101,6 +102,7 @@ export const dict = {
     "nav.method": "Método",
 
     "hero.eyebrow": "Pronóstico Monte Carlo",
+    "hero.title": "¿Quién levanta la copa en 2026?",
     "hero.lead":
       "Simulamos el torneo completo de 48 selecciones decenas de miles de veces con un modelo entrenado con 150 años de fútbol internacional — y leemos quién tiene más probabilidades de levantar la copa.",
     "hero.toWin": "de ganarlo todo",
