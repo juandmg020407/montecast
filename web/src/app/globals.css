@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+/* ----------------------------------------------------------------------------
+   Montecast design system — "editorial almanac / data terminal"
+   Dark ink broadsheet, acid-lime signal, gold reserved for the favourite.
+---------------------------------------------------------------------------- */
+@theme {
+  --color-ink: #090b0e;
+  --color-ink-1: #0e1117;
+  --color-ink-2: #151b24;
+  --color-ink-3: #1d2530;
+
+  --color-line: rgba(233, 238, 245, 0.09);
+  --color-line-strong: rgba(233, 238, 245, 0.18);
+
+  --color-paper: #eceff3;
+  --color-paper-dim: #a6adb8;
+  --color-muted: #6b727c;
+
+  --color-lime: #cdf24e;
+  --color-lime-soft: rgba(205, 242, 78, 0.14);
+  --color-gold: #ecb551;
+  --color-gold-soft: rgba(236, 181, 81, 0.14);
+
+  /* confederation accents */
+  --color-uefa: #6ea8fe;
+  --color-conmebol: #ffd24a;
+  --color-concacaf: #ff7a59;
+  --color-caf: #5fd0a0;
+  --color-afc: #c98bff;
+  --color-ofc: #57d4e0;
+
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-hanken);
+  --font-mono: var(--font-geist-mono);
+
+  --shadow-lift: 0 1px 0 0 rgba(255, 255, 255, 0.04) inset,
+    0 20px 50px -25px rgba(0, 0, 0, 0.9);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  border-color: var(--color-line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv01";
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* atmospheric glow behind everything */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(120% 80% at 78% -10%, rgba(205, 242, 78, 0.06), transparent 60%),
+    radial-gradient(90% 70% at 8% 8%, rgba(110, 168, 254, 0.05), transparent 55%),
+    var(--color-ink);
+}
+
+/* fine grain overlay for print texture */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: var(--color-lime);
+  color: #0b0b0b;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink-3);
+  border-radius: 999px;
+  border: 2px solid var(--color-ink);
+}
+
+/* ---- typography utilities ---- */
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+.eyebrow {
+  font-family: var(--font-mono), monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.68rem;
+  color: var(--color-paper-dim);
+}
+
+.rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--color-line-strong),
+    transparent
+  );
+}
+
+.card {
+  background: linear-gradient(180deg, var(--color-ink-1), rgba(14, 17, 23, 0.6));
+  border: 1px solid var(--color-line);
+  border-radius: 14px;
+}
+
+/* ---- motion ---- */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes grow-x {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes shimmer {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes float-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.bar-fill {
+  transform-origin: left center;
+  animation: grow-x 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
