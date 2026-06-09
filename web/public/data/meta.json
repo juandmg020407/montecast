@@ -1,0 +1,31 @@
+{
+  "tournament": "FIFA World Cup 2026",
+  "generatedAt": "2026-06-09T09:50:15+00:00",
+  "asOf": "2026-06-09",
+  "nSims": 50000,
+  "startDate": "2026-06-11",
+  "endDate": "2026-07-19",
+  "finalVenue": "MetLife Stadium, New York/New Jersey",
+  "hostNations": [
+    "Mexico",
+    "Canada",
+    "United States"
+  ],
+  "format": {
+    "teams": 48,
+    "groups": 12,
+    "group_size": 4,
+    "qualify_per_group": 2,
+    "best_thirds": 8,
+    "total_matches": 104,
+    "knockout_rounds": [
+      "R32",
+      "R16",
+      "QF",
+      "SF",
+      "F"
+    ]
+  },
+  "modelVersion": "0.1.0",
+  "engine": "Dixon-Coles x Elo ensemble + Monte Carlo"
+}
