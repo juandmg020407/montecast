@@ -1,0 +1,37 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Data — raw is downloadable, processed is regenerable
+engine/data/raw/
+engine/data/processed/
+
+# Node / Next.js
+node_modules/
+web/.next/
+web/out/
+web/build/
+.vercel/
+
+# Env / secrets
+.env
+.env.local
+*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# AI assistant scratch files
+.claude/
+**/CLAUDE.md
+**/AGENTS.md
