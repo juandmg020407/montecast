@@ -4,6 +4,7 @@ import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { Favourites } from "@/components/Favourites";
 import { Groups } from "@/components/Groups";
+import { Bracket } from "@/components/Bracket";
 
 export default function Home() {
   const data = loadData();
@@ -20,6 +21,12 @@ export default function Home() {
           <Hero meta={data.meta} top={favourite} />
           <Favourites teams={data.simulation.teams} />
           <Groups groups={data.groups} />
+          <Bracket
+            bracket={data.bracket}
+            groups={data.groups}
+            teams={data.simulation.teams}
+            meta={data.meta}
+          />
         </main>
       </div>
     </>
