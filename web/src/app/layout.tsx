@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Hanken_Grotesk, Geist_Mono } from "next/font/google";
+import { LanguageProvider } from "@/lib/i18n";
 import "./globals.css";
 
 const display = Fraunces({
@@ -40,7 +41,9 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${display.variable} ${sans.variable} ${mono.variable} antialiased`}
     >
-      <body>{children}</body>
+      <body>
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
     </html>
   );
 }
