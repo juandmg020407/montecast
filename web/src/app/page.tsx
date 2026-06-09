@@ -6,6 +6,7 @@ import { Favourites } from "@/components/Favourites";
 import { Groups } from "@/components/Groups";
 import { Bracket } from "@/components/Bracket";
 import { Method } from "@/components/Method";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   const data = loadData();
@@ -30,6 +31,7 @@ export default function Home() {
           />
           <Method meta={data.meta} />
         </main>
+        <Footer meta={data.meta} />
       </div>
     </>
   );
