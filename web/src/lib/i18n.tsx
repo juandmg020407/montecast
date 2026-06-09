@@ -81,7 +81,7 @@ export const dict = {
     "mt.p4.t": "Honest probabilities",
     "mt.p4.b":
       "Aggregating millions of simulated matches yields calibrated odds for every stage. The engine is open-source and regenerates as real results come in.",
-    "mt.stat.matches": "Historical matches",
+    "mt.stat.matches": "Years of football",
     "mt.stat.params": "Model",
     "mt.stat.params.v": "Dixon-Coles × Elo",
     "mt.stat.sims": "Simulations",
@@ -164,7 +164,7 @@ export const dict = {
     "mt.p4.t": "Probabilidades honestas",
     "mt.p4.b":
       "Agregar millones de partidos simulados produce probabilidades calibradas para cada fase. El motor es de código abierto y se actualiza con los resultados reales.",
-    "mt.stat.matches": "Partidos históricos",
+    "mt.stat.matches": "Años de fútbol",
     "mt.stat.params": "Modelo",
     "mt.stat.params.v": "Dixon-Coles × Elo",
     "mt.stat.sims": "Simulaciones",

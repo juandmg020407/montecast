@@ -5,6 +5,7 @@ import { Hero } from "@/components/Hero";
 import { Favourites } from "@/components/Favourites";
 import { Groups } from "@/components/Groups";
 import { Bracket } from "@/components/Bracket";
+import { Method } from "@/components/Method";
 
 export default function Home() {
   const data = loadData();
@@ -27,6 +28,7 @@ export default function Home() {
             teams={data.simulation.teams}
             meta={data.meta}
           />
+          <Method meta={data.meta} />
         </main>
       </div>
     </>
